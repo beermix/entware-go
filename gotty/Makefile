@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=gotty
-PKG_VERSION:=0.0.12
+PKG_VERSION:=0.0.13-2017-01-09
 PKG_RELEASE:=1
 PKG_GOGET:=github.com/yudai/gotty
 
@@ -16,6 +16,7 @@ GOPKG_SOURCE=GO_$(PKG_NAME)-$(PKG_VERSION)-$(PKG_RELEASE).tar.bz2
 
 #!!! uncomment PKG_SOURCE to download fixed version
 PKG_SOURCE=$(GOPKG_SOURCE)
+PKG_COMMIT=92d8d62ae1f52bdfcefb8985f2a1c27c6cfe2228
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/golang.mk
@@ -29,21 +30,6 @@ endef
 define Package/gotty/description
  GoTTY - Share your terminal as a web application.
 endef
-
-# Use go get only when PKG_SOURCE is undefined!!!
-ifeq ($(PKG_SOURCE),)
- define Build/Prepare
-	$(INSTALL_DIR) $(PKG_BUILD_DIR)
-	GOPATH=$(PKG_BUILD_DIR) gcc=$(TARGET_CC) ego get -d -x $(PKG_GOGET)
-	GOPATH=$(PKG_BUILD_DIR) gcc=$(TARGET_CC) ego get -d -x github.com/jteeuwen/go-bindata
-	(cd $(PKG_BUILD_DIR)/src/$(PKG_GOGET); \
-		git submodule sync && git submodule update --init --recursive; \
-		GOPATH=$(PKG_BUILD_DIR) PATH=$(GOROOT)/bin:$(TARGET_PATH) godep restore \
-	)
-	$(Build/Patch)
- endef
-endif
-
 
 define Package/gotty/install
 	$(INSTALL_DIR) $(1)/opt/bin

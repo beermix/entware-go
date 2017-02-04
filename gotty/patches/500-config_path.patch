@@ -1,6 +1,6 @@
 --- a/src/github.com/yudai/gotty/main.go
 +++ b/src/github.com/yudai/gotty/main.go
-@@ -57,7 +57,7 @@
+@@ -61,7 +61,7 @@
  		cliFlags,
  		cli.StringFlag{
  			Name:   "config",
@@ -9,7 +9,7 @@
  			Usage:  "Config file path",
  			EnvVar: "GOTTY_CONFIG",
  		},
-@@ -74,7 +74,7 @@
+@@ -78,7 +78,7 @@
  
  		configFile := c.String("config")
  		_, err := os.Stat(app.ExpandHomeDir(configFile))
@@ -20,7 +20,7 @@
  			}
 --- a/src/github.com/yudai/gotty/app/app.go
 +++ b/src/github.com/yudai/gotty/app/app.go
-@@ -81,10 +81,10 @@
+@@ -92,10 +92,10 @@
  	RandomUrlLength:     8,
  	IndexFile:           "",
  	EnableTLS:           false,
