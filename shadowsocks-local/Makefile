@@ -23,7 +23,7 @@ include $(INCLUDE_DIR)/golang.mk
 define Package/shadowsocks-local
 	$(call Package/gopackage/Default)
 	TITLE:=Execute shell commands via simple http server
-	URL:=https://https://github.com/shadowsocks/shadowsocks-local
+	URL:=https://github.com/shadowsocks/shadowsocks-go
 endef
 
 define Package/shadowsocks-local/description
