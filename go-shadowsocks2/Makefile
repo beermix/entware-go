@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=go-shadowsocks2
 
-PKG_VERSION:=2017-01-29
+PKG_VERSION:=git
 PKG_RELEASE:=1
 PKG_GOGET:=github.com/riobard/go-shadowsocks2
 

@@ -14,7 +14,7 @@
  	ConfigFile *goconfig.ConfigFile
  	// HomeDir is the home directory of the user
 -	HomeDir = configHome()
-+	HomeDir = "/opt/etc"
++	HomeDir = "/root"
  	// ConfigPath points to the config file
  	ConfigPath = path.Join(HomeDir, configFileName)
  	// Config is the global config

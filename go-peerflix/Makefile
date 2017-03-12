@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=go-peerflix
-PKG_VERSION:=2017-01-29
+PKG_VERSION:=git
 PKG_RELEASE:=1
 PKG_GOGET:=github.com/Sioro-Neoku/go-peerflix
 
