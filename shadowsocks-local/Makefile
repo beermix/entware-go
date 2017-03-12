@@ -10,7 +10,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=shadowsocks-local
 PKG_VERSION:=git
 PKG_RELEASE:=1
-PKG_GOGET:=github.com/shadowsocks/shadowsocks-local/cmd/shadowsocks-local
+PKG_GOGET:=github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-local
 
 GOPKG_SOURCE=GO_$(PKG_NAME)-$(PKG_VERSION)-$(PKG_RELEASE).tar.bz2
 
