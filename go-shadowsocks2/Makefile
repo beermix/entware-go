@@ -36,8 +36,8 @@ define Package/go-shadowsocks2/description
 endef
 
 define Package/go-shadowsocks2/install
-	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/bin/$(PKG_NAME) $(1)/opt/bin
+	$(INSTALL_DIR) $(1)/usr/bin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/bin/$(PKG_NAME) $(1)/usr/bin
 endef
 
 $(eval $(call BuildPackage,go-shadowsocks2))
